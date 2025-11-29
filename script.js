@@ -31,7 +31,7 @@ var categories = [
 
 var myCart = []; 
 
-// --- 2. STARTUP ---
+// 2. STARTUP 
 window.onload = function() {
     console.log("Page loaded."); // Requirement: Console Log 1
     
@@ -41,7 +41,7 @@ window.onload = function() {
     }
     updateCartBadge();
 
-    // Check which page we are on and run the correct display function
+    
     if(document.getElementById("home-product-list")) displayHomeProducts();
     if(document.getElementById("bestseller-product-list")) displayBestSellers();
     if(document.getElementById("men-product-list")) displayMenProducts();
@@ -51,7 +51,7 @@ window.onload = function() {
     if(document.getElementById("pay-display")) updatePaymentTotal();
 };
 
-/* --- STORAGE HELPER --- */
+// STORAGE HELPER 
 function saveCart() {
     localStorage.setItem('noiraCart', JSON.stringify(myCart));
     updateCartBadge();
@@ -66,7 +66,7 @@ function updateCartBadge() {
     if(badge) badge.innerText = count;
 }
 
-/* --- DISPLAY FUNCTIONS --- */
+// DISPLAY FUNCTIONS 
 function displayHomeProducts() {
     document.getElementById("home-product-list").innerHTML = renderList(featuredProducts);
 }
@@ -118,7 +118,7 @@ function displayCategories() {
     document.getElementById("category-list").innerHTML = html;
 }
 
-/* --- CART LOGIC --- */
+// CART LOGIC 
 function addToCart(id) {
     var all = featuredProducts.concat(topSellerProducts, menProducts, womenProducts);
     var product = null;
@@ -183,7 +183,6 @@ function renderCartPage() {
     var total = subtotal > 0 ? subtotal + 10 : 0;
     document.getElementById("total-price").innerText = "$" + total.toFixed(2);
 
-    // Save total for payment page
     localStorage.setItem('cartTotal', total.toFixed(2));
 }
 
@@ -197,7 +196,7 @@ function removeItem(id) {
     renderCartPage();
 }
 
-/* --- PAYMENT LOGIC --- */
+// PAYMENT LOGIC
 function updatePaymentTotal() {
     var txt = localStorage.getItem('cartTotal') || "0.00";
     document.getElementById("pay-display").innerText = "$" + txt;
@@ -224,7 +223,7 @@ function handlePayment(e) {
     window.location.href = "index.html"; // Redirect to Home
 }
 
-/* --- AUTH LOGIC --- */
+// AUTH LOGIC 
 function showLoginForm() {
     document.getElementById('login-box').style.display = 'block';
     document.getElementById('signup-box').style.display = 'none';
