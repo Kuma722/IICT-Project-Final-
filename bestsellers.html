@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noira | Top Sellers</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><img src="Images/logo1.png" alt="Logo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#myMenu"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse justify-content-center" id="myMenu">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="categories.html">Categories</a></li>
+                    <li class="nav-item"><a class="nav-link" href="bestsellers.html">Top Sellers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+                </ul>
+            </div>
+            <div><a href="login.html" class="btn btn-outline-dark btn-sm">Login / Sign-up</a></div>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+        <h2 class="text-center mb-5">Our Best Sellers</h2>
+        <div class="row" id="bestseller-product-list"></div>
+        <div class="text-center mt-4">
+            <a href="cart.html" class="btn btn-outline-light">Go to Cart</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container pb-4">
+            <div class="row">
+                <div class="col-md-3"><h5>About Us</h5><ul class="list-unstyled small text-muted"><li>Our Story</li><li>Careers</li><li>FAQs</li></ul></div>
+                <div class="col-md-3"><h5>Support</h5><ul class="list-unstyled small text-muted"><li>Track Order</li><li>Returns</li><li>Contact</li></ul></div>
+                <div class="col-md-3"><h5>Socials</h5><div><span class="me-3">Instagram</span><span class="me-3">Facebook</span><span>LinkedIn</span></div></div>
+                <div class="col-md-3"><h5>Address</h5><p class="small text-muted">A140X, Block F, Gulshan, Karachi</p></div>
+            </div>
+        </div>
+        <div style="border-top: 1px solid #999; width: 100%;"></div>
+        <div class="text-center py-3"><small>© 2025 Noira Pvt Ltd.</small></div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
