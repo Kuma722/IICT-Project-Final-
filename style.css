@@ -2,14 +2,14 @@
 body {
     background-color: #1D1B1B;
     color: #FFFFFF;
-    font-family: 'Inter', sans-serif;
+    font-family:'Times New Roman', Times, serif, serif;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height:100vh;
 }
 
 h1, h2, h3, h4, h5 {
-    font-family: 'Playfair Display', serif;
+    font-family:'Cambria, Cochin, Georgia, Times, Times New Roman, serif, sans-serif';
 }
 
 /* 2. Navigation Bar */
@@ -54,12 +54,7 @@ h1, h2, h3, h4, h5 {
     border: 1px solid #333;
     color: white;
     margin-bottom: 20px;
-    transition: transform 0.2s;
-}
-
-.card-custom:hover {
-    transform: translateY(-5px);
-}
+}   
 
 .card-custom img {
     height: 250px;
@@ -84,7 +79,7 @@ footer {
     display: flex;
     align-items: center;
     color: white;
-    box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5); 
+    box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.70); 
 }
 
 /* 7. Forms */
@@ -101,7 +96,6 @@ footer {
     box-shadow: none;
 }
 
-/* 8. Cart Specific */
 .bg-dark {
     background-color: #121018 !important;
 }

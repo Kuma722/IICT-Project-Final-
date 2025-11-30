@@ -1,30 +1,35 @@
 // --- 1. PRODUCT DATA ---
 
-var featuredProducts = [
+var featuredProducts = 
+[
     { id: 1, name: "Dior Sauvage", price: 59.99, image: "images/dior.jpg", category: "Men" },
-    { id: 2, name: "Black Opium", price: 85.00, image: "images/opium.jpg", category: "Women" },
+    { id: 2, name: "Black Opium", price: 84.99, image: "images/opium.jpg", category: "Women" },
     { id: 3, name: "Tom Ford Ombre", price: 99.99, image: "images/tomford.jpg", category: "Men" }
 ];
 
-var topSellerProducts = [
-    { id: 4, name: "Bleu De Chanel", price: 89.99, image: "images/chanel.jpg", category: "Women" },
-    { id: 5, name: "Nishane Hacivat", price: 119.99, image: "images/nishane.jpg", category: "Men" },
-    { id: 6, name: "Gucci Bloom", price: 95.00, image: "images/gucci.jpg", category: "Women" }
+var topSellerProducts = 
+[
+    { id: 4, name: "Bleu De Chanel", price: 119.99, image: "images/chanel.jpg", category: "Women" },
+    { id: 5, name: "Nishane Hacivat", price: 129.99, image: "images/nishane.jpg", category: "Men" },
+    { id: 6, name: "Gucci Bloom", price: 94.99, image: "images/gucci.jpg", category: "Women" }
 ];
 
-var menProducts = [
-    { id: 7, name: "Dior Sauvage", price: 59.99, image: "images/dior.jpg", category: "Men" },
-    { id: 5, name: "Nishane Hacivat", price: 119.99, image: "images/nishane.jpg", category: "Men" },
+var menProducts = 
+[
+    { id: 1, name: "Dior Sauvage", price: 59.99, image: "images/dior.jpg", category: "Men" },
+    { id: 5, name: "Nishane Hacivat", price: 129.99, image: "images/nishane.jpg", category: "Men" },
     { id: 3, name: "Tom Ford Ombre", price: 99.99, image: "images/tomford.jpg", category: "Men" }
 ];
 
-var womenProducts = [
-    { id: 10, name: "Black Opium", price: 85.00, image: "images/opium.jpg", category: "Women" },
-    { id: 11, name: "Gucci Bloom", price: 95.00, image: "images/gucci.jpg", category: "Women" },
-    { id: 12, name: "Bleu De Chanel", price: 120.00, image: "images/chanel.jpg", category: "Women" }
+var womenProducts = 
+[
+    { id: 2, name: "Black Opium", price: 84.99, image: "images/opium.jpg", category: "Women" },
+    { id: 6, name: "Gucci Bloom", price: 94.99, image: "images/gucci.jpg", category: "Women" },
+    { id: 4, name: "Bleu De Chanel", price: 119.99, image: "images/chanel.jpg", category: "Women" }
 ];
 
-var categories = [
+var categories = 
+[
     { name: "Men's Wear", img: "images/men.jpg", pageLink: "men.html" },
     { name: "Women's Wear", img: "images/women.jpg", pageLink: "women.html" }
 ];
@@ -32,7 +37,8 @@ var categories = [
 var myCart = []; 
 
 // 2. STARTUP 
-window.onload = function() {
+window.onload = function() 
+{
     console.log("Page loaded."); // Requirement: Console Log 1
     
     var storedCart = localStorage.getItem('noiraCart');
@@ -51,38 +57,46 @@ window.onload = function() {
     if(document.getElementById("pay-display")) updatePaymentTotal();
 };
 
-// STORAGE HELPER 
-function saveCart() {
+function saveCart() 
+{
     localStorage.setItem('noiraCart', JSON.stringify(myCart));
     updateCartBadge();
 }
 
-function updateCartBadge() {
+function updateCartBadge() 
+{
     var count = 0;
-    for(var i=0; i<myCart.length; i++) {
+    for(var i=0; i<myCart.length; i++) 
+    {
         count += myCart[i].qty;
     }
     var badge = document.getElementById("cart-count");
     if(badge) badge.innerText = count;
 }
 
-// DISPLAY FUNCTIONS 
-function displayHomeProducts() {
+
+function displayHomeProducts() 
+{
     document.getElementById("home-product-list").innerHTML = renderList(featuredProducts);
 }
-function displayBestSellers() {
+function displayBestSellers() 
+{
     document.getElementById("bestseller-product-list").innerHTML = renderList(topSellerProducts);
 }
-function displayMenProducts() {
+function displayMenProducts() 
+{
     document.getElementById("men-product-list").innerHTML = renderList(menProducts);
 }
-function displayWomenProducts() {
+function displayWomenProducts() 
+{
     document.getElementById("women-product-list").innerHTML = renderList(womenProducts);
 }
 
-function renderList(list) {
+function renderList(list) 
+{
     var html = "";
-    for (var i = 0; i < list.length; i++) {
+    for (var i = 0; i < list.length; i++) 
+    {
         html += `
             <div class="col-md-4">
                 <div class="card card-custom h-100 p-3">
@@ -100,10 +114,13 @@ function renderList(list) {
     return html;
 }
 
-function displayCategories() {
+function displayCategories() 
+{
     var html = "";
-    for (var i = 0; i < categories.length; i++) {
-        html += `
+    for (var i = 0; i < categories.length; i++) 
+    {
+        html += 
+        `
             <div class="col-md-5">
                 <div class="card card-custom h-100 p-3">
                     <img src="${categories[i].img}" style="height: 250px; object-fit: cover;">
@@ -119,22 +136,26 @@ function displayCategories() {
 }
 
 // CART LOGIC 
-function addToCart(id) {
+function addToCart(id) 
+{
     var all = featuredProducts.concat(topSellerProducts, menProducts, womenProducts);
     var product = null;
-    for(var i=0; i<all.length; i++) {
+    for(var i=0; i<all.length; i++) 
+    {
         if(all[i].id === id) { product = all[i]; break; }
     }
 
     var found = false;
-    for(var i=0; i<myCart.length; i++) {
+    for(var i=0; i<myCart.length; i++) 
+    {
         if(myCart[i].id === id) {
             myCart[i].qty++;
             found = true;
             break;
         }
     }
-    if(!found) {
+    if(!found) 
+    {
         myCart.push({
             id: product.id, name: product.name, price: product.price, image: product.image, qty: 1
         });
@@ -145,19 +166,25 @@ function addToCart(id) {
     console.log("Cart items updated."); // Requirement: Console Log 2
 }
 
-function renderCartPage() {
+function renderCartPage() 
+{
     var container = document.getElementById("cart-items");
     var subtotal = 0;
     var html = "";
 
-    if(myCart.length === 0) {
+    if(myCart.length === 0) 
+    {
         html = "<p class='text-center mt-5'>Your cart is empty.</p>";
-    } else {
-        for(var i=0; i<myCart.length; i++) {
+    } 
+    else 
+    {
+        for(var i=0; i<myCart.length; i++) 
+        {
             var item = myCart[i];
             subtotal += item.price * item.qty;
 
-            html += `
+            html += 
+            `
                 <div class="card bg-dark border-secondary mb-3 p-2">
                     <div class="row align-items-center">
                         <div class="col-3">
@@ -186,9 +213,11 @@ function renderCartPage() {
     localStorage.setItem('cartTotal', total.toFixed(2));
 }
 
-function removeItem(id) {
+function removeItem(id)
+{
     var temp = [];
-    for(var i=0; i<myCart.length; i++) {
+    for(var i=0; i<myCart.length; i++) 
+    {
         if(myCart[i].id !== id) temp.push(myCart[i]);
     }
     myCart = temp;
@@ -197,22 +226,28 @@ function removeItem(id) {
 }
 
 // PAYMENT LOGIC
-function updatePaymentTotal() {
+function updatePaymentTotal() 
+{
     var txt = localStorage.getItem('cartTotal') || "0.00";
     document.getElementById("pay-display").innerText = "$" + txt;
 }
 
-function toggleCardDetails() {
+function toggleCardDetails() 
+{
     var method = document.getElementById("payment-method").value;
     var cardBox = document.getElementById("card-details-box");
-    if(method === "card") {
+    if(method === "card") 
+    {
         cardBox.style.display = "block";
-    } else {
+    } 
+    else 
+    {
         cardBox.style.display = "none";
     }
 }
 
-function handlePayment(e) {
+function handlePayment(e) 
+{
     e.preventDefault();
     var name = document.getElementById("customer-name").value;
     if(!name) name = "Guest";
@@ -224,21 +259,25 @@ function handlePayment(e) {
 }
 
 // AUTH LOGIC 
-function showLoginForm() {
+function showLoginForm() 
+{
     document.getElementById('login-box').style.display = 'block';
     document.getElementById('signup-box').style.display = 'none';
 }
-function showSignupForm() {
+function showSignupForm() 
+{
     document.getElementById('login-box').style.display = 'none';
     document.getElementById('signup-box').style.display = 'block';
 }
-function handleLogin(e) {
+function handleLogin(e) 
+{
     e.preventDefault();
     alert("Logged in!"); // Requirement: Alert 3
     console.log("User logged in"); // Requirement: Console Log 3
     window.location.href = "index.html";
 }
-function handleSignup(e) {
+function handleSignup(e) 
+{
     e.preventDefault();
     alert("Account created!");
     window.location.href = "index.html";
