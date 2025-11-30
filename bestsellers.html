@@ -8,16 +8,16 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html"><img src="Images/logo1.png" alt="Logo"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#myMenu"><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse justify-content-center" id="myMenu">
-                <ul class="navbar-nav">
+            <a class="navbar-brand" href="index.html"><img src="images/logo1.png" alt="Logo"></a>
+            <div class="collapse navbar-collapse justify-content-center d-block">
+                <ul class="navbar-nav d-flex flex-row justify-content-center">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="categories.html">Categories</a></li>
                     <li class="nav-item"><a class="nav-link" href="bestsellers.html">Top Sellers</a></li>
-                    <li class="nav-item"><a class="nav-link" href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cart.html">Cart (<span id="cart-count">3</span>)</a></li>
                 </ul>
             </div>
             <div><a href="login.html" class="btn btn-outline-dark btn-sm">Login / Sign-up</a></div>
@@ -26,7 +26,47 @@
 
     <div class="container py-5">
         <h2 class="text-center mb-5">Our Best Sellers</h2>
-        <div class="row" id="bestseller-product-list"></div>
+        <div class="row" id="bestseller-product-list">
+
+
+            <div class="col-md-4">
+                <div class="card card-custom h-100 p-3">
+                    <img src="images/chanel.jpg" class="card-img-top">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Bleu De Chanel</h5>
+                        <p class="text-secondary">Women</p>
+                        <p class="fw-bold">$119.99</p>
+                        <button class="btn btn-purple w-100" onclick="addToCart()">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-4">
+                <div class="card card-custom h-100 p-3">
+                    <img src="images/nishane.jpg" class="card-img-top">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Nishane Hacivat</h5>
+                        <p class="text-secondary">Men</p>
+                        <p class="fw-bold">$129.99</p>
+                        <button class="btn btn-purple w-100" onclick="addToCart()">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-4">
+                <div class="card card-custom h-100 p-3">
+                    <img src="images/gucci.jpg" class="card-img-top">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Gucci Bloom</h5>
+                        <p class="text-secondary">Women</p>
+                        <p class="fw-bold">$94.99</p>
+                        <button class="btn btn-purple w-100" onclick="addToCart()">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="text-center mt-4">
             <a href="cart.html" class="btn btn-outline-light">Go to Cart</a>
         </div>
